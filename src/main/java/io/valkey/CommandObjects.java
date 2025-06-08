@@ -2401,7 +2401,7 @@ public class CommandObjects {
   }
   // Geo commands
 
-  // Hyper Log Log commands
+  // Hyper Log commands
   public final CommandObject<Long> pfadd(String key, String... elements) {
     return new CommandObject<>(commandArguments(Command.PFADD).key(key).addObjects((Object[]) elements), BuilderFactory.LONG);
   }
@@ -2433,7 +2433,7 @@ public class CommandObjects {
   public final CommandObject<Long> pfcount(byte[]... keys) {
     return new CommandObject<>(commandArguments(Command.PFCOUNT).keys((Object[]) keys), BuilderFactory.LONG);
   }
-  // Hyper Log Log commands
+  // Hyper Log commands
 
   // Stream commands
   public final CommandObject<StreamEntryID> xadd(String key, StreamEntryID id, Map<String, String> hash) {
