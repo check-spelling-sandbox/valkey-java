@@ -1351,7 +1351,7 @@ public class Jedis implements ServerCommands, DatabaseCommands, JedisCommands, J
   }
 
   /**
-   * Remove the specified field from an hash stored at key.
+   * Remove the specified field from a hash stored at key.
    * <p>
    * <b>Time complexity:</b> O(1)
    * @param key
@@ -3500,7 +3500,7 @@ public class Jedis implements ServerCommands, DatabaseCommands, JedisCommands, J
   /**
    * Provide information and statistics about the server.
    * <p>
-   * The info command returns different information and statistics about the server in an format
+   * The info command returns different information and statistics about the server in a format
    * that's simple to parse by computers and easy to read by humans.
    * <p>
    * <b>Format of the returned String:</b>
