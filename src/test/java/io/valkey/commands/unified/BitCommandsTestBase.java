@@ -25,7 +25,7 @@ public abstract class BitCommandsTestBase extends UnifiedJedisCommandsTestBase {
   }
 
   @Test
-  public void setAndgetbit() {
+  public void setAndGetBit() {
     assertFalse(jedis.setbit("foo", 0, true));
 
     assertTrue(jedis.getbit("foo", 0));
@@ -158,7 +158,7 @@ public abstract class BitCommandsTestBase extends UnifiedJedisCommandsTestBase {
   }
 
   @Test
-  public void setAndgetrange() {
+  public void setAndGetRange() {
     jedis.set("key1", "Hello World");
     Assert.assertEquals(11, jedis.setrange("key1", 6, "Jedis"));
 

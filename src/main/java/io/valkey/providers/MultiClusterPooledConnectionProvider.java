@@ -35,7 +35,7 @@ import io.valkey.exceptions.JedisValidationException;
  * With this ConnectionProvider users can seamlessly failover to Disaster Recovery (DR), Backup, and Active-Active cluster(s)
  * by using simple configuration which is passed through from Resilience4j - https://resilience4j.readme.io/docs
  * <p>
- * Support for manual failback is provided by way of {@link #setActiveMultiClusterIndex(int)}
+ * Support for manual fallback is provided by way of {@link #setActiveMultiClusterIndex(int)}
  * <p>
  */
 // TODO: move?
@@ -46,7 +46,7 @@ public class MultiClusterPooledConnectionProvider implements ConnectionProvider 
 
     /**
      * Ordered map of cluster/database endpoints which were provided at startup via the MultiClusterClientConfig.
-     * Users can move down (failover) or (up) failback the map depending on their availability and order.
+     * Users can move down (failover) or (up) fallback the map depending on their availability and order.
      */
     private final Map<Integer, Cluster> multiClusterMap = new ConcurrentHashMap<>();
 
@@ -59,7 +59,7 @@ public class MultiClusterPooledConnectionProvider implements ConnectionProvider 
     /**
      * Indicates the final cluster/database endpoint (connection pool), according to the pre-configured list
      * provided at startup via the MultiClusterClientConfig, is unavailable and therefore no further failover is possible.
-     * Users can manually failback to an available cluster which would reset this flag via {@link #setActiveMultiClusterIndex(int)}
+     * Users can manually fall back to an available cluster which would reset this flag via {@link #setActiveMultiClusterIndex(int)}
      */
     private volatile boolean lastClusterCircuitBreakerForcedOpen = false;
 

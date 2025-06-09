@@ -471,7 +471,7 @@ public class PublishSubscribeCommandsTest extends JedisCommandsTestBase {
   }
 
   @Test(expected = JedisException.class)
-  public void unsubscribeWhenNotSusbscribed() throws InterruptedException {
+  public void unsubscribeWhenNotSubscribed() throws InterruptedException {
     JedisPubSub pubsub = new JedisPubSub() {
     };
     pubsub.unsubscribe();

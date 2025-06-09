@@ -21,11 +21,11 @@ public enum DuplicatePolicy implements Rawable {
    */
   LAST,
   /**
-   * Only override if the value is lower than the existing value
+   * Only override if the value is less than the existing value
    */
   MIN,
   /**
-   * Only override if the value is higher than the existing value
+   * Only override if the value is greater than the existing value
    */
   MAX,
   /**

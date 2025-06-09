@@ -2969,7 +2969,7 @@ public class UnifiedJedis implements JedisCommands, JedisBinaryCommands,
   }
   // Geo commands
 
-  // Hyper Log Log commands
+  // Hyper Log commands
   @Override
   public long pfadd(String key, String... elements) {
     return executeCommand(commandObjects.pfadd(key, elements));
@@ -3009,7 +3009,7 @@ public class UnifiedJedis implements JedisCommands, JedisBinaryCommands,
   public long pfcount(byte[]... keys) {
     return executeCommand(commandObjects.pfcount(keys));
   }
-  // Hyper Log Log commands
+  // Hyper Log commands
 
   // Stream commands
   @Override

@@ -79,7 +79,7 @@ public class SearchTest extends RedisModuleCommandsTestBase {
 
     assertEquals("OK", client.ftCreate(index, IndexOptions.defaultOptions().setDefinition(rule), sc));
 
-    client.hset("profesor:5555", toMap("first", "Albert", "last", "Blue", "age", "55"));
+    client.hset("professor:5555", toMap("first", "Albert", "last", "Blue", "age", "55"));
     client.hset("student:1111", toMap("first", "Joe", "last", "Dod", "age", "18"));
     client.hset("pupil:2222", toMap("first", "Jen", "last", "Rod", "age", "14"));
     client.hset("student:3333", toMap("first", "El", "last", "Mark", "age", "17"));
@@ -133,7 +133,7 @@ public class SearchTest extends RedisModuleCommandsTestBase {
 
     assertEquals("OK", client.ftCreate(index, IndexOptions.defaultOptions().setDefinition(rule), sc));
 
-    client.hset("profesor:5555", toMap("first", "Albert", "last", "Blue", "age", "55"));
+    client.hset("professor:5555", toMap("first", "Albert", "last", "Blue", "age", "55"));
     client.hset("student:1111", toMap("first", "Joe", "last", "Dod", "age", "18"));
     client.hset("pupil:2222", toMap("first", "Jen", "last", "Rod", "age", "14"));
     client.hset("student:3333", toMap("first", "El", "last", "Mark", "age", "17"));
@@ -836,7 +836,7 @@ public class SearchTest extends RedisModuleCommandsTestBase {
   public void caseSensitiveTagField() {
     Schema sc = new Schema()
         .addTextField("title", 1.0)
-        .addTagField("category", true /*casesensitive*/);
+        .addTagField("category", true /*case-sensitive*/);
 
     assertEquals("OK", client.ftCreate(index, IndexOptions.defaultOptions(), sc));
 
@@ -1190,7 +1190,7 @@ public class SearchTest extends RedisModuleCommandsTestBase {
   }
 
   @Test
-  public void testHNSWVVectorSimilarity() {
+  public void testHNSWVectorSimilarity() {
     Map<String, Object> attr = new HashMap<>();
     attr.put("TYPE", "FLOAT32");
     attr.put("DIM", 2);
@@ -1271,7 +1271,7 @@ public class SearchTest extends RedisModuleCommandsTestBase {
     IndexDefinition rule = new IndexDefinition();
     assertEquals("OK", client.ftCreate(index, IndexOptions.defaultOptions().setDefinition(rule), sc));
 
-    client.hset("profesor:5555", toMap("first", "Albert", "last", "Blue", "age", "55"));
+    client.hset("professor:5555", toMap("first", "Albert", "last", "Blue", "age", "55"));
     client.hset("student:1111", toMap("first", "Joe", "last", "Dod", "age", "18"));
     client.hset("pupil:2222", toMap("first", "Jen", "last", "Rod", "age", "14"));
     client.hset("student:3333", toMap("first", "El", "last", "Mark", "age", "17"));

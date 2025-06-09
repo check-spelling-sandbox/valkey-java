@@ -615,11 +615,11 @@ public class Jedis implements ServerCommands, DatabaseCommands, JedisCommands, J
   }
 
   /**
-   * Test if the specified key exists. The command returns true if the key exists, otherwise false is
+   * Test if the specified key exists. The command returns true if the key exists; otherwise, false is
    * returned. Note that even keys set with an empty string as value will return true. Time
    * complexity: O(1)
    * @param key
-   * @return {@code true} if the key exists, otherwise {@code false}
+   * @return {@code true} if the key exists; otherwise, {@code false}
    */
   @Override
   public boolean exists(final byte[] key) {
@@ -1218,7 +1218,7 @@ public class Jedis implements ServerCommands, DatabaseCommands, JedisCommands, J
    * @param field
    * @param value
    * @return If the field already exists, and the HSET just produced an update of the value, 0 is
-   *         returned, otherwise if a new field is created 1 is returned.
+   *         returned; otherwise, if a new field is created 1 is returned.
    */
   @Override
   public long hset(final byte[] key, final byte[] field, final byte[] value) {
@@ -1254,7 +1254,7 @@ public class Jedis implements ServerCommands, DatabaseCommands, JedisCommands, J
    * @param key
    * @param field
    * @param value
-   * @return If the field already exists, 0 is returned, otherwise if a new field is created 1 is
+   * @return If the field already exists, 0 is returned; otherwise, if a new field is created 1 is
    *         returned.
    */
   @Override
@@ -1351,12 +1351,12 @@ public class Jedis implements ServerCommands, DatabaseCommands, JedisCommands, J
   }
 
   /**
-   * Remove the specified field from an hash stored at key.
+   * Remove the specified field from a hash stored at key.
    * <p>
    * <b>Time complexity:</b> O(1)
    * @param key
    * @param fields
-   * @return If the field was present in the hash it is deleted and 1 is returned, otherwise 0 is
+   * @return If the field was present in the hash it is deleted and 1 is returned; otherwise, 0 is
    *         returned and no operation is performed.
    */
   @Override
@@ -1631,8 +1631,8 @@ public class Jedis implements ServerCommands, DatabaseCommands, JedisCommands, J
    * go from head to tail that is the normal behaviour. So for example LREM with count -2 and hello
    * as value to remove against the list (a,b,c,hello,x,hello,hello) will leave the list
    * (a,b,c,hello,x). The number of removed elements is returned as an integer, see below for more
-   * information about the returned value. Note that non existing keys are considered like empty
-   * lists by LREM, so LREM against non existing keys will always return 0.
+   * information about the returned value. Note that nonexistent keys are considered like empty
+   * lists by LREM, so LREM against nonexistent keys will always return 0.
    * <p>
    * Time complexity: O(N) (with N being the length of the list)
    * @param key
@@ -1849,7 +1849,7 @@ public class Jedis implements ServerCommands, DatabaseCommands, JedisCommands, J
    * for accessing clients.
    * <p>
    * If the source set does not exist or does not contain the specified element no operation is
-   * performed and zero is returned, otherwise the element is removed from the source set and added
+   * performed and zero is returned; otherwise, the element is removed from the source set and added
    * to the destination set. On success one is returned, even if the element was already present in
    * the destination set.
    * <p>
@@ -1880,7 +1880,7 @@ public class Jedis implements ServerCommands, DatabaseCommands, JedisCommands, J
   }
 
   /**
-   * Return true if member is a member of the set stored at key, otherwise false is returned.
+   * Return true if member is a member of the set stored at key; otherwise, false is returned.
    * <p>
    * Time complexity O(1)
    * @param key
@@ -2125,7 +2125,7 @@ public class Jedis implements ServerCommands, DatabaseCommands, JedisCommands, J
 
   /**
    * Remove the specified member from the sorted set value stored at key. If member was not a member
-   * of the set no operation is performed. If key does not not hold a set value an error is
+   * of the set no operation is performed. If key does not hold a set value an error is
    * returned.
    * <p>
    * Time complexity O(log(N)) with N being the number of elements in the sorted set
@@ -3500,7 +3500,7 @@ public class Jedis implements ServerCommands, DatabaseCommands, JedisCommands, J
   /**
    * Provide information and statistics about the server.
    * <p>
-   * The info command returns different information and statistics about the server in an format
+   * The info command returns different information and statistics about the server in a format
    * that's simple to parse by computers and easy to read by humans.
    * <p>
    * <b>Format of the returned String:</b>
@@ -3508,7 +3508,7 @@ public class Jedis implements ServerCommands, DatabaseCommands, JedisCommands, J
    * All the fields are in the form field:value
    *
    * <pre>
-   * edis_version:0.07
+   * redis_version:0.07
    * connected_clients:1
    * connected_slaves:0
    * used_memory:3187
@@ -5059,11 +5059,11 @@ public class Jedis implements ServerCommands, DatabaseCommands, JedisCommands, J
   }
 
   /**
-   * Test if the specified key exists. The command returns true if the key exists, otherwise false is
+   * Test if the specified key exists. The command returns true if the key exists; otherwise, false is
    * returned. Note that even keys set with an empty string as value will return true. Time
    * complexity: O(1)
    * @param key
-   * @return {@code true} if the key exists, otherwise {@code false}
+   * @return {@code true} if the key exists; otherwise, {@code false}
    */
   @Override
   public boolean exists(final String key) {
@@ -5497,7 +5497,7 @@ public class Jedis implements ServerCommands, DatabaseCommands, JedisCommands, J
   }
 
   /**
-   * IDECRBY work just like {@link Jedis#decr(String) INCR} but instead to decrement by 1 the
+   * DECRBY works just like {@link Jedis#decr(String) INCR} but instead to decrement by 1 the
    * decrement is integer.
    * <p>
    * INCR commands are limited to 64-bit signed integers.
@@ -5661,7 +5661,7 @@ public class Jedis implements ServerCommands, DatabaseCommands, JedisCommands, J
    * @param field
    * @param value
    * @return If the field already exists, and the HSET just produced an update of the value, 0 is
-   *         returned, otherwise if a new field is created 1 is returned.
+   *         returned; otherwise, if a new field is created 1 is returned.
    */
   @Override
   public long hset(final String key, final String field, final String value) {
@@ -5697,7 +5697,7 @@ public class Jedis implements ServerCommands, DatabaseCommands, JedisCommands, J
    * @param key
    * @param field
    * @param value
-   * @return If the field already exists, 0 is returned, otherwise if a new field is created 1 is
+   * @return If the field already exists, 0 is returned; otherwise, if a new field is created 1 is
    *         returned.
    */
   @Override
@@ -6078,8 +6078,8 @@ public class Jedis implements ServerCommands, DatabaseCommands, JedisCommands, J
    * go from head to tail that is the normal behaviour. So for example LREM with count -2 and hello
    * as value to remove against the list (a,b,c,hello,x,hello,hello) will leave the list
    * (a,b,c,hello,x). The number of removed elements is returned as an integer, see below for more
-   * information about the returned value. Note that non existing keys are considered like empty
-   * lists by LREM, so LREM against non existing keys will always return 0.
+   * information about the returned value. Note that nonexistent keys are considered like empty
+   * lists by LREM, so LREM against nonexistent keys will always return 0.
    * <p>
    * Time complexity: O(N) (with N being the length of the list)
    * @param key
@@ -6251,7 +6251,7 @@ public class Jedis implements ServerCommands, DatabaseCommands, JedisCommands, J
    * for accessing clients.
    * <p>
    * If the source set does not exist or does not contain the specified element no operation is
-   * performed and zero is returned, otherwise the element is removed from the source set and added
+   * performed and zero is returned; otherwise, the element is removed from the source set and added
    * to the destination set. On success one is returned, even if the element was already present in
    * the destination set.
    * <p>
@@ -6283,7 +6283,7 @@ public class Jedis implements ServerCommands, DatabaseCommands, JedisCommands, J
   }
 
   /**
-   * Return true if member is a member of the set stored at key, otherwise false is returned.
+   * Return true if member is a member of the set stored at key; otherwise, false is returned.
    * <p>
    * Time complexity O(1)
    * @param key

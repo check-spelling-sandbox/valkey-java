@@ -27,7 +27,7 @@ public class BitCommandsTest extends JedisCommandsTestBase {
   }
 
   @Test
-  public void setAndgetbit() {
+  public void setAndGetBit() {
     assertFalse(jedis.setbit("foo", 0, true));
 
     assertTrue(jedis.getbit("foo", 0));
@@ -160,7 +160,7 @@ public class BitCommandsTest extends JedisCommandsTestBase {
   }
 
   @Test
-  public void setAndgetrange() {
+  public void setAndGetRange() {
     jedis.set("key1", "Hello World");
     assertEquals(11, jedis.setrange("key1", 6, "Jedis"));
 
